@@ -1,12 +1,12 @@
 <div class="contentList">
-  <p id="position">Position {{song.position}}</p>
-  <img [src]="imageSrc">
+  <p id="position">Position {{ song.position }}</p>
+  <img [src]="imageSrc" />
   <div>
-    <p id="songName">Song name: {{song.name}}</p>
-    <p>Artist: {{song.artist}}</p>
+    <p id="songName">Song name: {{ song.name }}</p>
+    <p>Artist: {{ song.artist }}</p>
   </div>
-  <p>Votes: {{song.votes}}</p>
-  <p>Date: {{ song.date | date:'dd.MM.yyyy HH:mm'}}</p>
+  <p>Votes: {{ song.votes }}</p>
+  <p>Date: {{ song.date | date : "dd.MM.yyyy HH:mm" }}</p>
 
   <button id="voteBtn" (click)="voteSong()">Vote</button>
   <button id="deleteBtn" (click)="deleteSong(song)">Delete</button>

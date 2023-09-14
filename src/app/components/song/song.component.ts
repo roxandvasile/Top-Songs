@@ -8,7 +8,7 @@ import { SongService } from 'src/app/services/song.service';
   styleUrls: ['./song.component.scss'],
 })
 export class SongComponent {
-  imageSrc = '../assets/images/play.png';
+  imageSrc = './play.png';
 
   constructor(private songService: SongService) {}
 
