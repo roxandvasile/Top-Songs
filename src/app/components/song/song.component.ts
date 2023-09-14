@@ -8,8 +8,6 @@ import { SongService } from 'src/app/services/song.service';
   styleUrls: ['./song.component.scss'],
 })
 export class SongComponent {
-  // imageSrc = './play.png';
-
   constructor(private songService: SongService) {}
 
   @Input() song!: Song;
