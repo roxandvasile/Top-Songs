@@ -1,0 +1,12 @@
+<form ngNativeValidate (ngSubmit)="addSong()">
+  <label for="song">Song name</label>
+  <input type="text" name="song" [(ngModel)]="songName" placeholder="Enter / Search song name" required
+    (input)="onSongNameAndArtistChange()" />
+
+  <label for="artist">Artist</label>
+  <input type="text" name="artist" [(ngModel)]="songArtist" placeholder="Enter / Search the artist" required
+    (input)="onSongNameAndArtistChange()" />
+
+  <button id="addBtn">Add</button>
+  <button type="button" id="applyBtn" (click)="updateSongInfo()">Apply</button>
+</form>

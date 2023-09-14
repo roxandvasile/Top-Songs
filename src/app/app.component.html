@@ -1,0 +1,8 @@
+<header>
+  <img [src]="imageSrc" id="logo" />
+</header>
+
+<button class="darkModeBtn" (click)="toggleDarkMode()">{{ isDarkMode ? 'Light Mode' : 'Dark Mode'}}</button>
+
+<app-form></app-form>
+<app-top></app-top>

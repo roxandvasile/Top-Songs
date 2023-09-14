@@ -1,0 +1,36 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "name": "Berlin",
+      "artist": "Nane",
+      "votes": 12,
+      "date": "4/18/2023, 9:22:05 PM",
+      "position": 1
+    },
+    {
+      "id": 2,
+      "name": "TUTUTU",
+      "artist": "Nane",
+      "votes": 9,
+      "date": "4/18/2023, 9:22:30 PM",
+      "position": 2
+    },
+    {
+      "id": 3,
+      "name": "Nightbird",
+      "artist": "Dj Snake",
+      "votes": 7,
+      "date": "4/18/2023, 9:22:50 PM",
+      "position": 4
+    },
+    {
+      "id": 4,
+      "name": "Natural",
+      "artist": "Imagine Dragons",
+      "votes": 7,
+      "date": "4/18/2023, 9:23:15 PM",
+      "position": 3
+    }
+  ]
+}

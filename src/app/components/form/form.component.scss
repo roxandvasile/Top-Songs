@@ -1,0 +1,50 @@
+@import "../../../assets/styles/colors.scss";
+
+form {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 60%;
+
+  label {
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  input {
+    border: 2px solid $sky-blue-color;
+    padding: 4px;
+    width: 200px;
+
+    ::placeholder {
+      letter-spacing: 1px;
+    }
+  }
+
+  #addBtn {
+    background-color: $mediu-dark-blue-color;
+
+    &:hover {
+      background-color: $mediu-light-blue-color;
+    }
+  }
+
+  #searchBtn {
+    background-color: $purple-dark-color;
+
+    &:hover {
+      background-color: $purple-light-color;
+    }
+  }
+
+  #applyBtn {
+    background-color: $magenta-dark-color;
+
+    &:hover {
+      background-color: $magenta-light-color;
+    }
+  }
+}

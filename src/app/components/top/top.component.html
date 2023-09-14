@@ -1,0 +1,2 @@
+<app-song *ngFor="let song of songs" [song]="song" (onSongVoted)="songVoted()"
+  (onSongDeleted)="songDeleted(song)"></app-song>
