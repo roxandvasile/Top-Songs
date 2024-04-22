@@ -33,26 +33,18 @@ export class TopComponent implements OnInit {
     this.songs.forEach((song, index) => (song.position = index + 1));
   }
 
-  filterSongs(songName: string, songArtist: string) {
-    if (songName === '' && songArtist === '') {
+  filterResults(search: string) {
+    if (!search) {
       this.songs = this.originalSongsArray;
-      this.getTop();
-    } else if (songName !== '' && songArtist === '') {
-      this.songs = this.originalSongsArray.filter((song) => {
-        return song.name.toLowerCase().includes(songName.toLowerCase());
-      });
-    } else if (songName === '' && songArtist !== '') {
-      this.songs = this.originalSongsArray.filter((song) => {
-        return song.artist.toLowerCase().includes(songArtist.toLowerCase());
-      });
-    } else {
-      this.songs = this.originalSongsArray.filter((song) => {
-        return (
-          song.name.toLowerCase().includes(songName.toLowerCase()) ||
-          song.artist.toLowerCase().includes(songArtist.toLowerCase())
-        );
-      });
+      return;
     }
+
+    this.songs = this.originalSongsArray.filter((song) => {
+      return (
+        song.name.toLowerCase().includes(search.toLowerCase().trim()) ||
+        song.artist.toLowerCase().includes(search.toLowerCase().trim())
+      );
+    });
   }
 
   ngOnInit(): void {
@@ -73,7 +65,7 @@ export class TopComponent implements OnInit {
     });
 
     this.songService.onSearchSong.subscribe((song: SearchSong) => {
-      this.filterSongs(song.songName, song.songArtist);
+      this.filterResults(song.search);
     });
 
     this.songService.onApplyClick.subscribe((updatedSong: Song) => {

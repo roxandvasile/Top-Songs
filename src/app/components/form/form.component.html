@@ -1,12 +1,62 @@
-<form ngNativeValidate (ngSubmit)="addSong()">
-  <label for="song">Song name</label>
-  <input type="text" name="song" [(ngModel)]="songName" placeholder="Enter / Search song name" required
-    (input)="onSongNameAndArtistChange()" />
+<form ngNativeValidate autocomplete="off" (ngSubmit)="addSong()">
+  <mat-form-field appearance="outline">
+    <mat-label>Enter song name</mat-label>
+    <input
+      matInput
+      #song
+      maxlength="55"
+      name="song"
+      [(ngModel)]="songName"
+      required
+      (input)="onSongNameAndArtistChange()"
+    />
+    <mat-hint align="start"><strong>Max characters</strong></mat-hint>
+    <mat-hint align="end">{{ song.value.length }} /55</mat-hint>
+  </mat-form-field>
 
-  <label for="artist">Artist</label>
-  <input type="text" name="artist" [(ngModel)]="songArtist" placeholder="Enter / Search the artist" required
-    (input)="onSongNameAndArtistChange()" />
+  <mat-form-field appearance="outline">
+    <mat-label>Enter the artist</mat-label>
+    <input
+      matInput
+      #artist
+      maxlength="55"
+      name="artist"
+      [(ngModel)]="songArtist"
+      required
+      (input)="onSongNameAndArtistChange()"
+    />
+    <mat-hint align="start"><strong>Max characters</strong></mat-hint>
+    <mat-hint align="end">{{ artist.value.length }} /55</mat-hint>
+  </mat-form-field>
 
-  <button id="addBtn">Add</button>
-  <button type="button" id="applyBtn" (click)="updateSongInfo()">Apply</button>
+  <div class="buttons">
+    <button mat-raised-button color="primary" id="add-btn" aria-label="add">
+      Add
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <button
+      mat-raised-button
+      color="accent"
+      aria-label="update"
+      type="button"
+      (click)="updateSongInfo()"
+    >
+      <mat-icon>update</mat-icon>
+      Update
+    </button>
+  </div>
 </form>
+
+<mat-form-field appearance="outline" class="search">
+  <mat-icon matPrefix>search</mat-icon>
+  <mat-label for="search">Search</mat-label>
+  <input
+    matInput
+    type="search"
+    placeholder="by artist or song"
+    name="search"
+    [(ngModel)]="search"
+    (input)="onSongNameAndArtistChange()"
+  />
+</mat-form-field>

@@ -1,69 +1,48 @@
+@use "@angular/material" as mat;
+
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap");
-@import "./assets/styles/colors.scss";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+@include mat.core();
+
+$angular-primary: mat.define-palette(mat.$indigo-palette, 500);
+$angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+    ),
+  )
+);
+
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+    ),
+  )
+);
+
+@include mat.core-theme($angular-default-theme);
+@include mat.button-theme($angular-default-theme);
+@include mat.all-component-themes($angular-default-theme);
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
 
-body {
-  background-color: $white-color;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-  color: $white-color;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 10px 30px;
-  margin-left: 20px;
-}
-
-#logo {
-  width: 12%;
-  margin-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contentList {
-  background-color: #e9ecef;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
 .dark-mode {
-  background-color: $bg-dark-color;
-  color: $white-color;
-
-  .contentList {
-    background-color: $bg-light-color;
-    box-shadow: rgba(114, 121, 223, 0.35) 0px 13px 27px -5px,
-      rgba(167, 165, 246, 0.3) 0px 8px 16px -8px;
-  }
-
-  input {
-    background-color: $bg-dark-color;
-    color: $white-color;
-  }
+  color: #fff;
+  background-color: #00031c;
+  @include mat.all-component-colors($angular-dark-theme);
 }
 
-.darkModeBtn {
-  color: black;
-  background-color: $white-color;
-  font-size: 1rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-30px, 30px);
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    background-color: $bg-dark-color;
-    color: $white-color;
-  }
+.dark-mode .mat-mdc-card {
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }

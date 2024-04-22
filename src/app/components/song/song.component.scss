@@ -1,48 +1,31 @@
-.contentList {
-  display: flex;
-  align-items: center;
-  margin: 75px 0;
-  padding: 30px;
+mat-card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-  #position {
-    font-size: 20px;
-    margin-left: 10px;
-  }
+  mat-card-header {
+    display: flex;
+    justify-content: space-around;
 
-  img {
-    margin-right: 80px;
-    width: 60px;
-  }
+    #position {
+      font-size: 26px;
+      align-items: center;
+      display: flex;
+    }
 
-  #songName {
-    padding-bottom: 20px;
-  }
-
-  p {
-    width: 300px;
-  }
-
-  #voteBtn {
-    background-color: #1d860d;
-
-    &:hover {
-      background-color: #29bf12;
+    mat-card-title,
+    mat-card-subtitle {
+      text-align: center;
     }
   }
 
-  #deleteBtn {
-    background-color: #c9184a;
+  mat-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
 
-    &:hover {
-      background-color: #d4466e;
-    }
-  }
-
-  #editBtn {
-    background-color: #264771;
-
-    &:hover {
-      background-color: #3666a5;
+    .votes {
+      display: flex;
+      align-items: center;
     }
   }
 }

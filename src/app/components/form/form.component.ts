@@ -15,6 +15,7 @@ export class FormComponent {
 
   songName: string = '';
   songArtist: string = '';
+  search: string = '';
   id!: number;
 
   addSong(): void {
@@ -30,6 +31,7 @@ export class FormComponent {
     let data: SearchSong = {
       songName: this.songName,
       songArtist: this.songArtist,
+      search: this.search,
     };
 
     this.songService.onSearchSong.emit(data);

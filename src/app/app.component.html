@@ -1,8 +1,18 @@
-<header>
-  <img [src]="imageSrc" id="logo" />
-</header>
+<button
+  mat-fab
+  color="basic"
+  class="lightModeBtn"
+  (click)="toggleDarkMode()"
+  *ngIf="isDarkMode; else lightMode"
+>
+  <mat-icon>light_mode</mat-icon>
+</button>
 
-<button class="darkModeBtn" (click)="toggleDarkMode()">{{ isDarkMode ? 'Light Mode' : 'Dark Mode'}}</button>
+<ng-template #lightMode>
+  <button mat-fab color="basic" class="darkModeBtn" (click)="toggleDarkMode()">
+    <mat-icon>dark_mode</mat-icon>
+  </button>
+</ng-template>
 
 <app-form></app-form>
 <app-top></app-top>

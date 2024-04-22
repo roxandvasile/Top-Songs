@@ -1,0 +1,17 @@
+.lightModeBtn,
+.darkModeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-30px, 30px);
+}
+
+.darkModeBtn {
+  color: #fff;
+  background-color: #1a1c33;
+}
+
+.lightModeBtn {
+  color: orange;
+  background-color: #fff;
+}

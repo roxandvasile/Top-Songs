@@ -1,50 +1,50 @@
-@import "../../../assets/styles/colors.scss";
-
 form {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 60%;
+  width: 40%;
+  margin: 30px auto 0 auto;
 
-  label {
-    margin: 0 20px;
-    font-size: 20px;
-    font-weight: 500;
+  mat-form-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 16px;
   }
 
-  input {
-    border: 2px solid $sky-blue-color;
-    padding: 4px;
-    width: 200px;
+  #add-btn {
+    margin-right: 12px;
+  }
+}
 
-    ::placeholder {
-      letter-spacing: 1px;
-    }
+.search {
+  width: 22%;
+  margin: 20px 20px 10px 0;
+  float: right;
+}
+
+.buttons {
+  margin-left: 30px;
+}
+
+@media (max-width: 830px) {
+  .search {
+    width: 27%;
+  }
+}
+
+@media (max-width: 610px) {
+  form {
+    width: 60%;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
-  #addBtn {
-    background-color: $mediu-dark-blue-color;
-
-    &:hover {
-      background-color: $mediu-light-blue-color;
-    }
+  .search {
+    width: 50%;
   }
+}
 
-  #searchBtn {
-    background-color: $purple-dark-color;
-
-    &:hover {
-      background-color: $purple-light-color;
-    }
-  }
-
-  #applyBtn {
-    background-color: $magenta-dark-color;
-
-    &:hover {
-      background-color: $magenta-light-color;
-    }
+@media (max-width: 394px) {
+  #add-btn {
+    margin-bottom: 20px;
   }
 }

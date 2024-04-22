@@ -1,14 +1,42 @@
-<div class="contentList">
-  <p id="position">Position {{song.position}}</p>
-  <img [src]="imageSrc">
-  <div>
-    <p id="songName">Song name: {{song.name}}</p>
-    <p>Artist: {{song.artist}}</p>
-  </div>
-  <p>Votes: {{song.votes}}</p>
-  <p>Date: {{ song.date | date:'dd.MM.yyyy HH:mm'}}</p>
+<mat-card>
+  <mat-card-header>
+    <p mat-card-avatar id="position">
+      {{ song.position }}
+    </p>
 
-  <button id="voteBtn" (click)="voteSong()">Vote</button>
-  <button id="deleteBtn" (click)="deleteSong(song)">Delete</button>
-  <button id="editBtn" (click)="editSong(song)">Edit</button>
-</div>
+    <mat-card-title>{{ song.name }}</mat-card-title>
+    <mat-card-subtitle>{{ song.artist }}</mat-card-subtitle>
+
+    <button
+      mat-icon-button
+      color="primary"
+      (click)="editSong(song)"
+      aria-label="edit"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card-header>
+
+  <img mat-card-image src="../../../assets/images/song.jpg" />
+
+  <mat-card-footer>
+    <p id="date">{{ song.date | date : "dd.MM.yyyy HH:mm" }}</p>
+
+    <div class="votes">
+      <p>{{ song.votes }} votes</p>
+
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="voteSong()"
+        aria-label="vote"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+
+    <button mat-icon-button (click)="deleteSong(song)" aria-label="delete">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-footer>
+</mat-card>

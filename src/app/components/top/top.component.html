@@ -1,2 +1,19 @@
-<app-song *ngFor="let song of songs" [song]="song" (onSongVoted)="songVoted()"
-  (onSongDeleted)="songDeleted(song)"></app-song>
+<div class="container responsive-grid" *ngIf="songs.length > 0; else noSong">
+  <div *ngFor="let song of songs">
+    <app-song
+      [song]="song"
+      (onSongVoted)="songVoted()"
+      (onSongDeleted)="songDeleted(song)"
+    >
+    </app-song>
+  </div>
+</div>
+
+<ng-template #noSong>
+  <img
+    id="notFoundSong"
+    src="../../../assets/images/notFound.png"
+    alt="Happy girl wearing headphones"
+  />
+  <h2>Sorry, we couldn't find the song</h2>
+</ng-template>

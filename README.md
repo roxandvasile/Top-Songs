@@ -2,6 +2,7 @@
 From javascript to Angular
 
 Replicate the Songs Top behaviour but using Angular features as follows:
+
 - create a Song component which displays Song info (artist, name, date, votes, buttons) and a SongTop Angular component to display songs and handle their top positioning; add separate scss styling to each components
 - create a Song interface to use across the app
 - for this first Angular homework, you can just hardcode a Song array, pass it to the SongTop component and using a ngFor directive, render the Song components
